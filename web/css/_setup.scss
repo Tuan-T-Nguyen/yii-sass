@@ -1,0 +1,68 @@
+html {
+    font-size: 14px;
+
+    @media #{$screen-xs} {
+        font-size: 13px;
+    }
+}
+
+body {
+    position: relative;
+    color: $color-primary;
+    background-color: $bg-color;
+    font-family: $font-primary;
+    font-weight: 300;
+    line-height: 1.8;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button, input {
+    font-family: inherit;
+}
+
+a {
+    color: $color-primary;
+    @include transition(all 0.25s ease-out); // From mixin
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+    color: tint($color-primary, 10%);
+    cursor: pointer;
+}
+
+a.link-inherit {
+    color: inherit;
+    &:hover, &:focus {
+        color: $color-primary;
+    }
+}
+
+a.link-reset {
+    color: inherit;
+    &:hover, &:focus {
+        color: inherit;
+    }
+}
+
+textarea:focus, input:focus, a:focus, a:visited, *:focus { outline: none;}
+
+iframe { border: none; }
+
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-backface-visibility: hidden;
+}
+
+::selection {
+    background: $color-primary;
+    color: #ffffff;
+}
+*::-moz-selection {
+    background: $color-primary;
+    color: #ffffff;
+}
+
